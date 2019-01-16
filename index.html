@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Components Example</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.22/dist/vue.js"></script>
+
+</head>
+<body>
+    <main>
+        <!-- <div id="app">
+            <user first_name="Soraya" last_name="Pittis" role="all-around awesomeness"></user>
+            <user first_name="J" last_name="B" role="the boss"></user>
+        </div>
+     -->
+
+    <nav>
+        <ul class="main-nav">
+            <li class="nav-item">Home</li>
+            <li class="nav-item">Users</li>
+            <li class="nav-item">Portfolio</li>
+            <li class="nav-item">Contact</li>
+        </ul>
+    </nav>
+    <article>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, exercitationem! Cupiditate ducimus quia deserunt accusantium. Alias explicabo modi delectus architecto omnis. Laboriosam debitis magnam harum hic et quod nihil a!Ab officia doloribus asperiores, laudantium possimus tempora praesentium corporis assumenda fuga cupiditate? Placeat eum corrupti illum similique ab, debitis, cum, provident iste explicabo aliquam culpa. Id earum quae deserunt unde!
+    </article>
+
+    <h3>Our Team</h3>
+    <hr>
+    <div id="app">
+            <user first_name="Soraya" @passfunccallup="logMainMessage" last_name="Pittis" role="all-around awesomeness"></user> <!-- @ is a short form for hearing an event, example, you're building your portfolio and it's broken into components, want to fire an event, function is in main vue model, need to run function from child "add to fb likes" run to parents, hooks to ai like that. when you have to do something in the child, ? --> <!--had to take capitals out of passfunccallup for it to work-->
+            <user first_name="J" last_name="B" role="the boss"></user> <!--static values, you can do dynamic too-->
+    </div>
+</main>
+   
+    <!-- templates! --> <!--templates have to have just one root element inside, so we're using a div to contain tags-->
+    <template id="activeuser">
+<div>
+    <h3>{{ role }}</h3>
+    <p>{{ first_name }}</p>
+    <p>{{ last_name }}</p>
+    <button v-on:click="logChildMsg">log child click</button> <!-- going to go inside our component that we are creating -->
+    <button v-on:click="runParentFunc">run a parent function</button>
+</div>
+
+    </template>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
